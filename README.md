@@ -138,21 +138,21 @@ Proyecto desarrollado como parte de la materia de Arquitectura de Software, demo
 📖 Conceptos Implementados
 Web Semántica
 Uso de metadatos estructurados que permiten a máquinas entender el contenido:
-Schema.org: Vocabulario estándar para web semántica
-JSON-LD: Formato de serialización de datos enlazados
-SEO: Mejora en resultados de búsqueda (Rich Snippets)
+- Schema.org: Vocabulario estándar para web semántica
+- JSON-LD: Formato de serialización de datos enlazados
+- SEO: Mejora en resultados de búsqueda (Rich Snippets)
 Especialidades Médicas
 Mapeo de especialidades a valores válidos de Schema.org:
-Cardiología → http://schema.org/Cardiovascular
-Pediatría → http://schema.org/Pediatric
-Dermatología → http://schema.org/Dermatology
+- Cardiología → http://schema.org/Cardiovascular
+- Pediatría → http://schema.org/Pediatric
+- Dermatología → http://schema.org/Dermatology
 [Ver mapeo completo en código fuente]
 🔒 Seguridad
 ⚠️ IMPORTANTE:
-NO subir el archivo .env a repositorios públicos
-Cambiar credenciales por defecto en producción
-Usar HTTPS en ambientes productivos
-Implementar autenticación y autorización
+- NO subir el archivo .env a repositorios públicos
+- Cambiar credenciales por defecto en producción
+- Usar HTTPS en ambientes productivos
+- Implementar autenticación y autorización
 🚧 Funcionalidades por Implementar
 ⏳ Sistema de autenticación
 ⏳ Gestión de citas
