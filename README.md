@@ -159,3 +159,6 @@ Mapeo de especialidades a valores válidos de Schema.org:
 ⏳ API REST completa
 ⏳ Panel administrativo
 ⏳ Frontend con framework moderno
+
+📄 Licencia
+MIT License - Proyecto con fines académicos
