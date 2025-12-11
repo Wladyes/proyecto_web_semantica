@@ -7,34 +7,35 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-# Sistema de Gestión de Citas Médicas con Web Semántica
+ Sistema de Gestión de Citas Médicas con Web Semántica
 
-Proyecto académico desarrollado con **Laravel 12** que implementa **Web Semántica** usando **Schema.org** y **JSON-LD** para mejorar el SEO y la interoperabilidad con motores de búsqueda.
+Aplicación web desarrollada con Laravel que implementa Web Semántica usando Schema.org y JSON-LD para mejorar el SEO y la interoperabilidad con motores de búsqueda y asistentes de IA.
 
 ## 🎯 Características
 
-- ✅ CRUD de perfiles de médicos
+- ✅ Gestión de perfiles de médicos
 - ✅ Implementación de JSON-LD con vocabulario Schema.org
-- ✅ Validación exitosa con Schema.org Validator (0 errores)
-- ✅ Factory y Seeders con datos de prueba (100 médicos)
+- ✅ Metadatos estructurados semánticamente
+- ✅ Validación exitosa con Schema.org Validator
+- ✅ Factory y Seeders para datos de prueba
 - ✅ Arquitectura MVC con Laravel
-- ✅ Base de datos MySQL
+- ✅ Interfaz responsive
 
 ## 🛠️ Tecnologías
 
-- **Backend:** Laravel 12.42.0
+- **Backend:** Laravel 12.x
 - **Frontend:** Blade Templates, HTML5, CSS3
-- **Base de datos:** MySQL (XAMPP)
+- **Base de datos:** MySQL
 - **Web Semántica:** Schema.org, JSON-LD
-- **PHP:** 8.2.12
-- **Control de versiones:** Git + GitHub
+- **PHP:** 8.2+
+- **Control de versiones:** Git
 
 ## 📋 Requisitos Previos
 
 - PHP >= 8.2
 - Composer
-- MySQL
-- XAMPP (recomendado)
+- MySQL o MariaDB
+- Servidor web (Apache/Nginx) o XAMPP
 - Git
 
 ## 🚀 Instalación
@@ -62,25 +63,24 @@ env
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
-DB_PORT=3307
-DB_DATABASE=proyecto_web_semantica
-DB_USERNAME=root
-DB_PASSWORD=
-5. Ejecutar migraciones y seeders
+DB_PORT=3306
+DB_DATABASE=nombre_de_tu_base_de_datos
+DB_USERNAME=tu_usuario
+DB_PASSWORD=tu_contraseña
+5. Crear base de datos
+Crear una base de datos MySQL con el nombre especificado en .env
+6. Ejecutar migraciones y seeders
 bash
 
 
 php artisan migrate:fresh --seed
-6. Levantar servidor
+7. Levantar servidor de desarrollo
 bash
 
 
-php artisan serve --host=192.168.100.92 --port=8000
-7. Acceder a la aplicación
-text
-
-
-http://192.168.100.92:8000
+php artisan serve
+8. Acceder a la aplicación
+Abrir navegador en: http://localhost:8000
 🌐 Estructura de Web Semántica
 Cada perfil de médico incluye metadatos estructurados con JSON-LD:
 json
@@ -89,56 +89,73 @@ json
 {
   "@context": "https://schema.org",
   "@type": "Physician",
-  "name": "Dr. Ejemplo",
-  "email": "ejemplo@hospital.com",
-  "telephone": "+593-999-999-999",
+  "name": "Nombre del Médico",
+  "email": "email@ejemplo.com",
+  "telephone": "+593-XXX-XXX-XXX",
   "medicalSpecialty": "http://schema.org/Cardiovascular",
   "hospitalAffiliation": {
     "@type": "Hospital",
-    "name": "Hospital Central"
+    "name": "Nombre del Hospital"
   }
 }
 ✅ Validación Schema.org
+Los metadatos están validados con:
 0 errores
 0 advertencias
-Validado con: https://validator.schema.org/
+Herramienta: https://validator.schema.org/
 📂 Estructura del Proyecto
 text
 
 
 proyecto_web_semantica/
 ├── app/
-│   └── Http/Controllers/
-│       └── MedicoController.php
+│   ├── Http/Controllers/
+│   │   └── MedicoController.php
+│   └── Models/
+│       └── User.php
 ├── database/
-│   ├── factories/UserFactory.php
+│   ├── factories/
+│   │   └── UserFactory.php
 │   ├── migrations/
-│   └── seeders/DatabaseSeeder.php
+│   └── seeders/
+│       └── DatabaseSeeder.php
 ├── resources/
 │   └── views/
-│       ├── layouts/app.blade.php
+│       ├── layouts/
+│       │   └── app.blade.php
 │       └── medicos/
 │           ├── index.blade.php
 │           └── show.blade.php
-└── routes/
-    └── web.php
-🎓 Información Académica
-Materia: Arquitectura de Software
-Institución: [Tu Universidad]
-Período: 2025
-Estudiante: [Tu Nombre]
-📝 Funcionalidades
-Implementadas:
-✅ Listado de médicos
-✅ Perfil individual con JSON-LD
-✅ Seeders automáticos
-✅ Mapeo de especialidades a Schema.org
-Por implementar:
+├── routes/
+│   └── web.php
+└── README.md
+🎓 Contexto Académico
+Proyecto desarrollado como parte de la materia de Arquitectura de Software, demostrando la implementación de:
+Patrones de diseño MVC
+Web Semántica con estándares W3C
+APIs RESTful
+Buenas prácticas de desarrollo
+📖 Conceptos Implementados
+Web Semántica
+Uso de metadatos estructurados que permiten a máquinas entender el contenido:
+Schema.org: Vocabulario estándar para web semántica
+JSON-LD: Formato de serialización de datos enlazados
+SEO: Mejora en resultados de búsqueda (Rich Snippets)
+Especialidades Médicas
+Mapeo de especialidades a valores válidos de Schema.org:
+Cardiología → http://schema.org/Cardiovascular
+Pediatría → http://schema.org/Pediatric
+Dermatología → http://schema.org/Dermatology
+[Ver mapeo completo en código fuente]
+🔒 Seguridad
+⚠️ IMPORTANTE:
+NO subir el archivo .env a repositorios públicos
+Cambiar credenciales por defecto en producción
+Usar HTTPS en ambientes productivos
+Implementar autenticación y autorización
+🚧 Funcionalidades por Implementar
 ⏳ Sistema de autenticación
-⏳ API REST con JSON-LD
-⏳ Frontend mejorado con Bootstrap
-🤝 Contribuciones
-Este es un proyecto académico. Las sugerencias son bienvenidas.
-📄 Licencia
-MIT License
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+⏳ Gestión de citas
+⏳ API REST completa
+⏳ Panel administrativo
+⏳ Frontend con framework moderno
