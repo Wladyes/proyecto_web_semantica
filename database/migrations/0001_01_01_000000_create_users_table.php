@@ -16,9 +16,18 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password');      
+            
+            // Nuevos campos para médicos
+            $table->string('role')->default('medico');
+            $table->string('especialidad');
+            $table->string('telefono');
+            $table->string('afiliacion');
+            $table->string('nombre_afiliacion');
+
             $table->rememberToken();
             $table->timestamps();
+                        
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
