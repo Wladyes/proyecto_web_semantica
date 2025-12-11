@@ -131,10 +131,10 @@ proyecto_web_semantica/
 └── README.md
 🎓 Contexto Académico
 Proyecto desarrollado como parte de la materia de Arquitectura de Software, demostrando la implementación de:
-Patrones de diseño MVC
-Web Semántica con estándares W3C
-APIs RESTful
-Buenas prácticas de desarrollo
+- Patrones de diseño MVC
+- Web Semántica con estándares W3C
+- APIs RESTful
+- Buenas prácticas de desarrollo
 📖 Conceptos Implementados
 Web Semántica
 Uso de metadatos estructurados que permiten a máquinas entender el contenido:
